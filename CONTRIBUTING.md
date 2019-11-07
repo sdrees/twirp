@@ -32,6 +32,20 @@ of cross-language clients are in the [clientcompat](./clientcompat) directory.
 Twirp uses github pull requests. Fork, hack away at your changes, run the test
 suite with `make`, and submit a PR.
 
+## Contributing Documentation ##
+
+Twirp's docs are generated with [Docusaurus](https://docusaurus.io/). You can
+safely edit anything inside the [docs](./docs) directory, adding new pages or
+editing them. You can edit the sidebar by editing
+[website/sidebars.json](./website/sidebars.json).
+
+Then, to render your changes, run docusaurus's local server. To do this:
+
+ 1. [Install docusaurus on your machine](https://docusaurus.io/docs/en/installation.html).
+ 2. `cd website`
+ 3. `npm start`
+ 4. Navigate to http://localhost:3000/.
+
 ## Releasing Versions ##
 
 Releasing versions is the responsibility of the core maintainers. Most people
@@ -53,10 +67,13 @@ Twirp uses Github releases. To make a new release:
  3. Add a new commit to master with a message like "Version vX.X.X release".
  4. Tag the commit you just made: `git tag <version number>` and `git push
     origin --tags`
- 5. Go to Github https://github.com/twitchtv/twirp/releases and
+ 5. Run `make release_gen` to generate release assets in the `release`
+    directory. This requires Docker to be installed.
+ 6. Go to Github https://github.com/twitchtv/twirp/releases and
     "Draft a new release".
- 6. Make sure to document changes, specially when upgrade instructions are
+ 7. Make sure to document changes, specially when upgrade instructions are
     needed.
+ 8. Upload all files in the `release` directory as part of the release.
 
 
 ## Code of Conduct

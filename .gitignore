@@ -6,4 +6,6 @@ clientcompat/pycompat/ENV
 
 build
 
-vendor
+npm-debug.log
+
+/release
